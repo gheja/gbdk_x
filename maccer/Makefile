@@ -11,10 +11,12 @@ SRC	= maccer.c test-1.ms Makefile
 DOC	= README ChangeLog
 OBJS	= maccer.o
 
-all: $(BIN)
+all: $(BIN) doc
 
 $(BIN): $(OBJS)
 	$(CC) $(LDFLAGS) -o $(BIN) $(OBJS)
+
+doc:
 	doc++ -d html $(BIN).c
 
 clean:
